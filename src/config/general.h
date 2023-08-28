@@ -40,6 +40,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 #define	NET_PROTO_STP		/* Spanning Tree protocol */
 #define	NET_PROTO_LACP		/* Link Aggregation control protocol */
 #define	NET_PROTO_EAPOL		/* EAP over LAN protocol */
+//#define NET_PROTO_LLDP	/* Link Layer Discovery protocol */
 
 /*
  * PXE support
@@ -150,7 +151,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 //#define POWEROFF_CMD		/* Power off command */
 //#define IMAGE_TRUST_CMD	/* Image trust management commands */
 //#define PCI_CMD		/* PCI commands */
-//#define PARAM_CMD		/* Form parameter commands */
+//#define PARAM_CMD		/* Request parameter commands */
 //#define NEIGHBOUR_CMD		/* Neighbour management commands */
 //#define PING_CMD		/* Ping command */
 //#define CONSOLE_CMD		/* Console command */
@@ -160,6 +161,7 @@ FILE_LICENCE ( GPL2_OR_LATER_OR_UBDL );
 //#define CERT_CMD		/* Certificate management commands */
 //#define IMAGE_MEM_CMD		/* Read memory command */
 #define IMAGE_ARCHIVE_CMD	/* Archive image management commands */
+#define SHIM_CMD		/* EFI shim command (or dummy command) */
 
 /*
  * ROM-specific options
