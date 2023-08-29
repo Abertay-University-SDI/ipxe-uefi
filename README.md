@@ -4,7 +4,7 @@ Merged with GPT boot functionality patch. Ready for deployment.
 
 Compile on a standard Linux build. At the time of writing Ubuntu 22.04 was used.
 
-From the ./src directory run:
+From the ```./src``` directory run:
 
 ```bash
 
@@ -12,9 +12,9 @@ sudo make bin-x86_64-efi/ipxe.efi EMBED=embed.ipxe
 
 ```
 
-The resulting ipxe.efi file is the bootloader defined in the DHCP config. This allows for true UEFI network boot as well as graceful hand off to local GPT partitions. Everything was rigorously tested on the most modern operating systems and hardware available at the time of writing.
+The resulting ```ipxe.efi``` file is the bootloader defined in the DHCP config. This allows for true UEFI network boot as well as graceful hand off to local GPT partitions. Everything was rigorously tested on the most modern operating systems and hardware available at the time of writing.
 
-Within the embed.ipxe file various operating perameters are defined:
+Within the ```embed.ipxe``` file various operating parameter are defined:
 
 ```
 :netboot
