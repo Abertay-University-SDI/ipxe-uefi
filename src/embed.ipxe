@@ -1,0 +1,8 @@
+#!ipxe
+dhcp && goto netboot || goto dhcperror
+
+:dhcperror
+prompt --key s --timeout 10000 DHCP failed, hit 's' for the iPXE shell; reboot in 10 seconds && shell || reboot
+
+:netboot
+chain tftp://${next-server}/vanguard/single/${netX/ip}.ipxe || chain tftp://${next-server}/vanguard/main.ipxe || sanboot --no-describe --drive 1 --filename \EFI\ubuntu\grubx64.efi || sanboot --drive 2 --filename \EFI\ubuntu\grubx64.efi || sanboot --drive 3 --filename \EFI\ubuntu\grubx64.efi || sanboot --drive 4 --filename \EFI\ubuntu\grubx64.efi || prompt --key s --timeout 10000 Chainloading failed, hit 's' for the iPXE shell; reboot in 10 seconds. Do not change file paths without recompiling! - Thomas Kranenburg && shell || reboot
