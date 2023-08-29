@@ -1,12 +1,12 @@
 Merged with GPT boot functionality patch. Ready for deployment.
 
-##Compile Instructions
+## Compile Instructions
 
 Compile on a standard Linux build. At the time of writing Ubuntu 22.04 was used.
 
 From the ./src directory run:
 
-'''bash
+''' bash
 
 sudo make bin-x86_64-efi/ipxe.efi EMBED=embed.ipxe
 
@@ -23,12 +23,12 @@ chain tftp://${next-server}/vanguard/single/${netX/ip}.ipxe || chain tftp://${ne
 
 Here the bootloader first looks for an IP specified menu located at [DHCP IP ADDRESS]/vanguard/single/[HOST IP ADDRESS].ipxe. 
 
-For example: '''tftp://10.1.0.3/vanguard/single/10.1.5.20.ipxe'''
+For example: ''' tftp://10.1.0.3/vanguard/single/10.1.5.20.ipxe '''
 
 This allows for host specific menus to be deployed per system. Notice the file paths are hard coded. Any change to file paths will sadly require a recompile.
 If this IP specific menu is not present it then checks for a default menu. The one specified here for example would be:
 
-'''tftp://10.1.0.3/vanguard/main.ipxe'''
+''' tftp://10.1.0.3/vanguard/main.ipxe '''
 
 
 
